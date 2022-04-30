@@ -40,11 +40,11 @@ func RandomCpuName(brand string) string {
 
 }
 
-func RandomInt(min int, max int) int {
-	return min + rand.Intn(min-max+1)
+func RandomInt(min, max int) int {
+	return min + rand.Int()%(max-min+1)
 }
 
-func RandomFloat64(min float64, max float64) float64 {
+func RandomFloat64(min, max float64) float64 {
 	return min + rand.Float64()*(max-min)
 }
 
@@ -59,7 +59,7 @@ func RandomMemory(unit proto.Memory_UNIT, minMem int, maxmem int) *proto.Memory 
 	return &mem
 }
 
-func RandomFloat32(min float32, max float32) float32 {
+func RandomFloat32(min, max float32) float32 {
 	return min + rand.Float32()*(max-min)
 }
 
