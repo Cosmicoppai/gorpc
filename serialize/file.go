@@ -3,6 +3,7 @@ package serialize
 import (
 	"google.golang.org/protobuf/proto"
 	"io/ioutil"
+	"log"
 )
 
 func WriteProtoBufToBinaryFile(msg proto.Message, fileName string) error {
@@ -15,4 +16,18 @@ func WriteProtoBufToBinaryFile(msg proto.Message, fileName string) error {
 		return err
 	}
 	return nil
+}
+
+func ReadProtoBuffFromBinary(fileNames string, message proto.Message) error {
+
+	data, err := ioutil.ReadFile(fileNames)
+	if err != nil {
+		log.Fatalln(err)
+	}
+	err = proto.Unmarshal(data, message)
+	if err != nil {
+		log.Fatalln("Cannot unmarshal the data", err)
+	}
+	return nil
+
 }

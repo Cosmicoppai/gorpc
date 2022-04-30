@@ -2,7 +2,7 @@ package sample
 
 import (
 	"github.com/google/uuid"
-	"gorpc/src/proto"
+	"gorpc/src/pb"
 	"math/rand"
 )
 
