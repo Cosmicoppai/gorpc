@@ -31,3 +31,15 @@ func ReadProtoBuffFromBinary(fileNames string, message proto.Message) error {
 	return nil
 
 }
+
+func WriteProtoBufToJson(message proto.Message, filename string) error {
+	data, err := protoBufToJson(message)
+	if err != nil {
+		return err
+	}
+	err = ioutil.WriteFile(filename, data, 0644)
+	if err != nil {
+		return err
+	}
+	return nil
+}

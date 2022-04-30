@@ -13,10 +13,7 @@ import (
 func TestSerialize(t *testing.T) {
 	t.Parallel()
 
-	file, err := os.Create("test")
-	if err != nil {
-		t.Fatal(err)
-	}
+	file, err := createFile("test")
 	message := sample.NewLaptop()
 	err = serialize.WriteProtoBufToBinaryFile(message, file.Name())
 	if err != nil {
@@ -28,4 +25,16 @@ func TestSerialize(t *testing.T) {
 		log.Fatalln(err)
 	}
 	proto.Equal(message, message2)
+	jsonFile, err := createFile("test.json")
+	if err != nil {
+		log.Fatalln(err)
+	}
+	err = serialize.WriteProtoBufToJson(message, jsonFile.Name())
+	if err != nil {
+		log.Fatalln(err)
+	}
+}
+
+func createFile(filename string) (*os.File, error) {
+	return os.Create(filename)
 }
