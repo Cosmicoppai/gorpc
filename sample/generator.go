@@ -64,6 +64,7 @@ func NewScreen() *proto.Screen {
 
 func NewLaptop() *proto.Laptop {
 	id := RandomUUID()
+	cpu := NewCpu()
 	gpus := []*proto.GPU{NewGpu()}
 	brand := RandomLaptopBrand()
 	storages := []*proto.Storage{NewHdd(), NewSSd()}
@@ -74,6 +75,6 @@ func NewLaptop() *proto.Laptop {
 	lastUpdate := timestamppb.Now()
 	price := RandomFloat64(300, 2000)
 	return &proto.Laptop{Id: id, Brand: brand, Name: RandomLaptopName(brand),
-		Screen: NewScreen(), Ram: NewMemory(), Gpus: gpus, Keyboard: NewKeyBoard(),
+		Screen: NewScreen(), Ram: NewMemory(), Cpu: cpu, Gpus: gpus, Keyboard: NewKeyBoard(),
 		Storages: storages, Weight: weight, ReleaseYear: releaseYear, UpdatedAt: lastUpdate, Price: price}
 }
