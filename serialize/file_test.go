@@ -22,10 +22,10 @@ func TestSerialize(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	msg := pb.Laptop{}
-	err = serialize.ReadProtoBuffFromBinary(file.Name(), msg)
+	message2 := &pb.Laptop{}
+	err = serialize.ReadProtoBuffFromBinary(file.Name(), message2)
 	if err != nil {
 		log.Fatalln(err)
 	}
-	proto.Equal(message)
+	proto.Equal(message, message2)
 }

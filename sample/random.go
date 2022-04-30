@@ -6,14 +6,14 @@ import (
 	"math/rand"
 )
 
-func RandomKeyBoardLayout() proto.KeyBoard_Layout {
+func RandomKeyBoardLayout() pb.KeyBoard_Layout {
 	switch rand.Intn(3) {
 	case 1:
-		return proto.KeyBoard_QWERTY
+		return pb.KeyBoard_QWERTY
 	case 2:
-		return proto.KeyBoard_QWERTZ
+		return pb.KeyBoard_QWERTZ
 	default:
-		return proto.KeyBoard_AZERTY
+		return pb.KeyBoard_AZERTY
 	}
 }
 
@@ -48,12 +48,12 @@ func RandomFloat64(min, max float64) float64 {
 	return min + rand.Float64()*(max-min)
 }
 
-func RandomMemory(unit proto.Memory_UNIT, minMem int, maxmem int) *proto.Memory {
-	var mem proto.Memory
+func RandomMemory(unit pb.Memory_UNIT, minMem int, maxmem int) *pb.Memory {
+	var mem pb.Memory
 	if unit > 0 && unit < 7 {
 		mem.Unit = unit
 	} else {
-		mem.Unit = proto.Memory_UNKNOWN
+		mem.Unit = pb.Memory_UNKNOWN
 	}
 	mem.Value = uint64(RandomInt(minMem, maxmem))
 	return &mem
@@ -63,11 +63,11 @@ func RandomFloat32(min, max float32) float32 {
 	return min + rand.Float32()*(max-min)
 }
 
-func RandomScreenPanel() proto.Screen_Panel {
+func RandomScreenPanel() pb.Screen_Panel {
 	if rand.Intn(2) == 1 {
-		return proto.Screen_IPS
+		return pb.Screen_IPS
 	}
-	return proto.Screen_OLED
+	return pb.Screen_OLED
 
 }
 
