@@ -19,3 +19,5 @@ go.work
 
 src/proto
 .idea
+serialize/test.json
+serialize/test
