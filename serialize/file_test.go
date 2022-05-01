@@ -24,7 +24,9 @@ func TestSerialize(t *testing.T) {
 	if err != nil {
 		log.Fatalln(err)
 	}
-	proto.Equal(message, message2)
+	if !proto.Equal(message, message2) { // check if both Messages are equal
+		log.Fatalln("Messages are not equal !")
+	}
 	jsonFile, err := createFile("test.json")
 	if err != nil {
 		log.Fatalln(err)
