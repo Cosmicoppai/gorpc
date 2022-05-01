@@ -4,7 +4,13 @@ import (
 	"github.com/google/uuid"
 	"gorpc/src/pb"
 	"math/rand"
+	"strconv"
+	"time"
 )
+
+func init() {
+	rand.Seed(time.Now().UnixNano())
+}
 
 func RandomKeyBoardLayout() pb.KeyBoard_Layout {
 	switch rand.Intn(3) {
@@ -36,7 +42,7 @@ func randomStringsFromSet(stringSet ...string) string {
 }
 
 func RandomCpuName(brand string) string {
-	return brand + string(rune(rand.Intn(5)))
+	return brand + "-" + strconv.Itoa(rand.Intn(5))
 
 }
 
@@ -82,6 +88,6 @@ func RandomLaptopBrand() string {
 
 func RandomLaptopName(brand string) string {
 	modelNo := rand.Intn(100)
-	return brand + string(rune(modelNo))
+	return brand + "-" + strconv.Itoa(modelNo)
 
 }
