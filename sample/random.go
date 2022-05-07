@@ -2,7 +2,7 @@ package sample
 
 import (
 	"github.com/google/uuid"
-	"gorpc/src/pb"
+	"gorpc/pb"
 	"math/rand"
 	"strconv"
 	"time"

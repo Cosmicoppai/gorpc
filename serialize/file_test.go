@@ -2,9 +2,9 @@ package serialize_test
 
 import (
 	"google.golang.org/protobuf/proto"
+	"gorpc/pb"
 	"gorpc/sample"
 	"gorpc/serialize"
-	"gorpc/src/pb"
 	"log"
 	"os"
 	"testing"

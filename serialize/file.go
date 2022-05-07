@@ -33,7 +33,7 @@ func ReadProtoBuffFromBinary(fileNames string, message proto.Message) error {
 }
 
 func WriteProtoBufToJson(message proto.Message, filename string) error {
-	data, err := protoBufToJson(message)
+	data, err := ProtoBufToJson(message)
 	if err != nil {
 		return err
 	}

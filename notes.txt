@@ -1,0 +1,9 @@
+There are 4 types of GRPC:
+
+# Unary [Regular Request Reply]
+
+# Server streaming [Duplex service with session using a client callback interface]
+
+# Bidirectional streaming [Full duplex service with session]
+
+# Client streaming [One-way operations]

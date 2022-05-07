@@ -2,7 +2,7 @@ package sample
 
 import (
 	"google.golang.org/protobuf/types/known/timestamppb"
-	pb "gorpc/src/pb"
+	"gorpc/pb"
 )
 
 // NewKeyBoard returns a new sample keyboard

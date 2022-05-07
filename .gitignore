@@ -17,7 +17,7 @@
 # Go workspace file
 go.work
 
-src/proto
+pb/proto
 .idea
 serialize/test.json
 serialize/test
